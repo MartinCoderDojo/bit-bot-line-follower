@@ -3,6 +3,12 @@ from microbit import *
 leftLine = pin11
 rightLine = pin5
 
+# pin 0 = left speed
+# pin 8 = left direction
+# pin 1 = right speed
+# pin 12 = right direction
+# Direction = 0 for forward, 1 for backward
+
 
 def moveRobot(pin0Val, pin8Val, pin1Val, pin12Val):
     pin0.write_digital(pin0Val)
@@ -25,6 +31,10 @@ def turnLeft():
 
 def stop():
     moveRobot(0, 0, 0, 0)
+
+
+def reverse():
+    moveRobot(1, 1, 1, 1)
 
 
 while True:
